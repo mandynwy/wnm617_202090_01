@@ -1,24 +1,188 @@
-<!DOCTYPE htlm>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>html page</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animal Tracker</title>
+
+
+   <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+   <link rel="stylesheet" href="css/app.css">
+
+   <script src="lib/js/jquery-2.2.4.min.js"></script>
+   <script src="js/app.js"></script>
+
+   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
 </head>
 <body>
-	<header>
-		<h1>webpage</h1>
-		<p>This is a webpage</p>
-	</header>
-	<nav class="nav">
-		<ul>
-			<li><a href="#article1">Link1</a></li>
-			<li><a href="#article1">Link1</a></li>
-			<li><a href="#article1">Link1</a></li>
-			<li><a href="#article1">Link1</a></li>
-			<li><a href="#article1">Link1</a></li>
-			<li><a href="#article1">Link1</a></li>
-		</ul>
-	</nav>
+
+<!--SIGNIN PAGE-->
+   <section data-role="page" id="signin-page">
+      <div data-role="main" class="container">
+         <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+        
+         </div>
+         <form id="signin-form" data-ajax="false" style="padding:1em">
+            <div class="form-control">
+               <label for="signin-username" class="form-label">Username</label>
+               <input id="signin-username" type="text" class="form-input" data-role="none" placeholder="Type your user name">
+            </div>
+            <div class="form-control">
+               <label for="signin-password" class="form-label">Password</label>
+               <input id="signin-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+            </div>
+            <div class="form-control-sib">
+               <a href="#list-page" class="form-button">Sign In</a>
+            </div>
+            <div class="form-control" style="text-align:center;font-size:0.8em">
+               Don't have an account? <a href="#signup-page">Sign Up</a>!
+            </div>
+         </form>
+      </div>
+   </section>
+
+
+<!--SIGNUP PAGE-->
+   <section data-role="page" id="signup-page">
+      <div data-role="main" class="container">
+
+         <form id="signup-form" data-ajax="false" style="padding:1em">
+            <div class="form-control">
+               <label for="signup-username" class="form-label">Username</label>
+               <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Enter your username">
+            </div>
+             <div class="form-control">
+               <label for="signup-email" class="form-label">Email</label>
+               <input id="signup-email" type="text" class="form-input" data-role="none" placeholder="Enter your email">
+            </div>
+            <div class="form-control">
+               <label for="signup-password" class="form-label">Password</label>
+               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Enter your password">
+            </div>
+            <div class="form-control">
+               <label for="signup-confirm-password" class="form-label">Confirm Password</label>
+               <input id="signup-confirm-password" type="text" class="form-input" data-role="none" placeholder="Re-enter Password">
+            </div>
+            <div class="form-control-sib">
+               <a href="#list-page" class="form-button">Sign Up</a>
+            </div>
+           <div class="form-control" style="text-align:center;font-size:0.8em">
+               Already have an account? <a href="#signin-page">Sign In</a>!
+            </div>
+         </form>
+      </div>
+   </section>
+
+
+<!--MAP PAGE-->
+   <section data-role="page" id="map-page">
+      <div data-role="main">
+         <img src="img/map.png" alt="Map">
+      </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+
+<!--LIST PAGE-->
+   <section data-role="page" id="list-page">
+      <header data-role="header">
+         <h1>Cat List</h1>
+         <ul>
+            <li class="flex-stretch"></li>
+            <li><a href="#animal-adding-page">+</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <ul>
+            <!-- li*10>a[href=#animal-profile-page]>{Animal $} -->
+            <li><a href="#animal-profile-page">Animal 1</a></li>
+            <li><a href="#animal-profile-page">Animal 2</a></li>
+            <li><a href="#animal-profile-page">Animal 3</a></li>
+            <li><a href="#animal-profile-page">Animal 4</a></li>
+            <li><a href="#animal-profile-page">Animal 5</a></li>
+            <li><a href="#animal-profile-page">Animal 6</a></li>
+            <li><a href="#animal-profile-page">Animal 7</a></li>
+            <li><a href="#animal-profile-page">Animal 8</a></li>
+            <li><a href="#animal-profile-page">Animal 9</a></li>
+            <li><a href="#animal-profile-page">Animal 10</a></li>
+         </ul>
+      </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+
+<!--USER-PROFILE PAGE-->
+   <section data-role="page" id="user-profile-page">
+       <header data-role="header">
+         <h1>Profile</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="profile-form" data-ajax="false" style="padding:1em">
+            <div class="form-control">
+               <label for="profile-username" class="form-label">Username</label>
+               <input id="profile-username" type="text" class="form-input" data-role="none" placeholder="user">
+            </div>
+            <div class="form-control">
+               <label for="profile-about" class="form-label">About</label>
+               <input id="profile-about" type="text" class="form-input" data-role="none" placeholder="I love cat">
+            </div>
+            
+         </form>
+      </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+
+<!--ANIMAL-PROFILE PAGE-->
+   <section data-role="page" id="animal-profile-page">
+      <header data-role="header">
+         <h1>Animal Profile</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+      </div>
+   </section>
+
+
+<!--ANIMAL-ADDING PAGE-->
+   <section data-role="page" id="animal-adding-page">
+      <header data-role="header">
+         <h1>Adding Animal Profile</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+      </div>
+   </section>
+
+
+
 </body>
 </html>

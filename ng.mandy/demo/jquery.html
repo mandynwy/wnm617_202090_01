@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Jquery Demos</title>
+
+   <link rel="stylesheet" href="../css/style.css">
+
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <script>
+   $(()=>{
+
+      /* ACCORDION */
+      $('.accordion dt').on('click',function(e){
+         // lexical this
+         // $(this).next().toggle();
+         // $(this).next().slideToggle();
+         // $(this).next().slideDown()
+         //    .siblings('dd').slideUp();
+
+         if($(this).hasClass('active')) {
+            $(this).removeClass('active')
+               .next().slideUp();
+         } else {
+            $(this).addClass('active')
+               .siblings('dt').removeClass('active');
+            $(this).next().slideDown()
+               .siblings('dd').slideUp();
+         }
+      })
+
+
+
+      /* TAB GROUP */
+      $('.tabgroup .tab').on('click',function(e) {
+         let index = $(this).index();
+
+         $(this).addClass('active')
+            .siblings().removeClass('active');
+
+         $(this)
+            .closest('.tabgroup').find('.content')
+            .eq(index).addClass('active')
+            .siblings().removeClass('active');
+      })
+   })
+   </script>
+</head>
+<body>
+   <header class="container">
+      <h1>Remembering jQuery</h1>
+   </header>
+
+   <div class="container">
+      <h2>Accordion</h2>
+
+      <dl class="accordion">
+         <!-- (dt+dd)*4 -->
+         <dt>Bear</dt>
+         <dd>Lives in the woods</dd>
+         <dt>Eagle</dt>
+         <dd>Lives in the sky</dd>
+         <dt>Shark</dt>
+         <dd>Lives in the ocean</dd>
+         <dt>Honey Badger</dt>
+         <dd>Don't give a crap</dd>
+      </dl>
+
+
+      <dl class="accordion">
+         <!-- (dt+dd)*4 -->
+         <dt>Bear</dt>
+         <dd>Lives in the woods</dd>
+         <dt>Eagle</dt>
+         <dd>Lives in the sky</dd>
+         <dt>Shark</dt>
+         <dd>Lives in the ocean</dd>
+         <dt>Honey Badger</dt>
+         <dd>Don't give a crap</dd>
+      </dl>
+
+   </div>
+
+   <div class="container">
+      <h2>Tab Group</h2>
+
+      <div class="tabgroup">
+         <div class="tabs">
+            <!-- .tab*4{Link $} -->
+            <div class="tab active">Link 1</div>
+            <div class="tab">Link 2</div>
+            <div class="tab">Link 3</div>
+            <div class="tab">Link 4</div>
+         </div>
+         <div class="contents">
+            <!-- .content*4>h3{Content $}+div>p*4>lorem30 -->
+            <div class="content active">
+               <h3>Content 1</h3>
+               <div>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Necessitatibus debitis ipsum fuga vero? Quaerat deleniti natus pariatur, architecto quae, placeat laborum eaque veritatis nemo amet, animi autem assumenda et possimus!</p>
+                  <p>Voluptates, maiores tempore explicabo similique ea alias id odio labore dolorem dicta nesciunt ratione, nemo nihil esse debitis quas distinctio minus amet facere! Fugit sequi esse distinctio ab. Magni, aspernatur?</p>
+                  <p>Corrupti eligendi ducimus ut ad deserunt adipisci magnam architecto ipsum fugit dolorum voluptate blanditiis nostrum officiis beatae rerum exercitationem autem, expedita laborum eveniet nulla quia praesentium veritatis! Vero, rerum neque?</p>
+                  <p>Eos, nobis atque optio ea accusantium illum voluptate ipsum, temporibus sapiente vero minus blanditiis reiciendis quas cum rem magnam pariatur? Consequatur doloribus cumque, numquam recusandae pariatur blanditiis neque exercitationem. Aperiam!</p>
+               </div>
+            </div>
+            <div class="content">
+               <h3>Content 2</h3>
+               <div>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora porro optio perferendis, inventore, exercitationem hic iusto earum cum sequi possimus in consectetur rem consequuntur eos, quos. Tenetur reprehenderit, odio accusantium?</p>
+                  <p>Aut qui ipsa cum obcaecati, vero nulla doloribus maxime, non consectetur sed cumque ad pariatur doloremque unde porro ratione inventore itaque nobis consequuntur laborum, sunt deserunt delectus. Laborum, officiis, molestiae!</p>
+                  <p>Aliquid deleniti sapiente et autem asperiores consectetur corporis, voluptatibus modi, nostrum omnis odit, perspiciatis earum consequuntur magnam a quam? Repellat expedita commodi placeat iure excepturi praesentium repudiandae nostrum temporibus, ipsum.</p>
+                  <p>Deserunt repellendus iure sint amet, mollitia, laudantium similique quod dolor aliquid molestias ea numquam, unde. Quia, ab dolore doloribus consequatur labore ullam omnis eligendi mollitia voluptatibus qui accusantium deleniti vero?</p>
+               </div>
+            </div>
+            <div class="content">
+               <h3>Content 3</h3>
+               <div>
+                  <p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Porro aut, deleniti ea quis adipisci. Repellat voluptatem sapiente, eius error, quod in corporis adipisci tenetur excepturi nisi, nihil quibusdam dolor. Dolor.</p>
+                  <p>Rem, voluptate. Quibusdam dignissimos, at voluptas corrupti praesentium harum, repudiandae facere corporis, facilis id beatae qui expedita illum aut. Quasi incidunt temporibus minus sequi commodi pariatur, soluta, fuga recusandae quibusdam.</p>
+                  <p>Deleniti quasi obcaecati nobis fugiat odio tenetur. Fugiat vitae pariatur officia deserunt explicabo distinctio. Quod, itaque quos dicta praesentium veritatis beatae delectus, excepturi nisi quia. Error neque id ullam, mollitia!</p>
+                  <p>Sequi eligendi commodi eveniet, a hic alias fuga explicabo harum voluptas laudantium. Iste ipsa, iusto id repudiandae? Libero labore aut hic ab beatae repudiandae doloribus voluptas. Labore in saepe corrupti?</p>
+               </div>
+            </div>
+            <div class="content">
+               <h3>Content 4</h3>
+               <div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed hic itaque aliquid cumque ducimus rem molestiae fuga maxime similique, repellendus id laudantium illo repellat totam delectus, consequuntur quod sit, ea!</p>
+                  <p>Nesciunt quae fugiat aliquam recusandae voluptates ea, asperiores consequuntur odio quo, mollitia adipisci minus et quaerat, obcaecati. Ut est sint consequatur tempora odit vitae, ipsam iste magni, ratione ipsa delectus!</p>
+                  <p>Repellat accusamus fugiat saepe quae eius sed incidunt, alias non iste, quibusdam pariatur omnis minus deserunt harum, praesentium autem et at modi beatae soluta. Voluptates natus doloremque nemo. Nostrum, excepturi.</p>
+                  <p>Error, mollitia illum! Eligendi autem debitis optio, maiores tempora, placeat deserunt exercitationem atque quis adipisci cupiditate. Repellat nulla saepe perspiciatis dicta omnis iure cupiditate culpa quibusdam. Commodi sed vel praesentium?</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>
