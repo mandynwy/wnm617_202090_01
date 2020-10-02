@@ -87,9 +87,11 @@ nav a {
     
 }
 
+
+
 section {
   float: left;
-  margin: 0 1.5%;
+  margin: 5% 1.5%;
   width: 30%;
   background-color: #7058ff;
   color:white;
@@ -103,17 +105,32 @@ aside {
 }
 
 .footer-container{
-	position:sticky;
+	position:fixed;
 	left: 0;
    bottom: 0;
    width: 100%;
    text-align: center;
 }
 
+@media (max-width: 600px) {
+  .main aside {
+    margin-top: 20px;
+    width:100%;
 
 
+  }
+  
+  
+   section {
+  margin: none;
+  width: 100%;
 
+}
 
+  
+  
+  
+}
 
 
 
