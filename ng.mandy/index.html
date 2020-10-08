@@ -11,17 +11,18 @@
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
    <script src="js/app.js"></script>
+   <script src="js/signin.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
 <body>
 
-<!--SIGNIN PAGE-->
+
    <section data-role="page" id="signin-page">
-      <div data-role="main" class="container">
+      <div data-role="main">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-        
+            <img src="img/icon/thumbs.svg" style="width:90vw;height:90vw;" class="icon" alt="">
          </div>
          <form id="signin-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
@@ -32,33 +33,28 @@
                <label for="signin-password" class="form-label">Password</label>
                <input id="signin-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
             </div>
+            <div id="err-msg">Invalid username or password!</div>
             <div class="form-control-sib">
-               <a href="#list-page" class="form-button">Sign In</a>
+               <input type="submit" data-role="none" class="form-button" value="Sign In">
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em">
                Don't have an account? <a href="#signup-page">Sign Up</a>!
             </div>
          </form>
       </div>
+
    </section>
 
-
-<!--SIGNUP PAGE-->
    <section data-role="page" id="signup-page">
-      <div data-role="main" class="container">
-
+      <div data-role="main">
          <form id="signup-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
-               <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Enter your username">
-            </div>
-             <div class="form-control">
-               <label for="signup-email" class="form-label">Email</label>
-               <input id="signup-email" type="text" class="form-input" data-role="none" placeholder="Enter your email">
+               <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your user name">
             </div>
             <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
-               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Enter your password">
+               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
             </div>
             <div class="form-control">
                <label for="signup-confirm-password" class="form-label">Confirm Password</label>
@@ -67,112 +63,164 @@
             <div class="form-control-sib">
                <a href="#list-page" class="form-button">Sign Up</a>
             </div>
-           <div class="form-control" style="text-align:center;font-size:0.8em">
+            <div class="form-control" style="text-align:center;font-size:0.8em">
                Already have an account? <a href="#signin-page">Sign In</a>!
             </div>
          </form>
       </div>
    </section>
 
-
-<!--MAP PAGE-->
-   <section data-role="page" id="map-page">
+   <section data-role="page" id="recent-page">
       <div data-role="main">
-         <img src="img/map.png" alt="Map">
+         <div class="floater right bottom">
+            <div class="btn-circle" data-toggle="#recent-drawer">&plus;</div>
+         </div>
+
+
+         <div class="modal" id="recent-drawer">
+            <!-- <div class="modal-back" data-deactivate="#recent-drawer"></div> -->
+            <div class="modal-drawer left">
+               <div class="modal-head">Title</div>
+               <div class="modal-body">
+                  Links and such
+               </div>
+            </div>
+         </div>
       </div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#map-page">Map</a></li>
+            <li><a href="#recent-page">Recent</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
+
+
    </section>
 
-
-<!--LIST PAGE-->
    <section data-role="page" id="list-page">
       <header data-role="header">
-         <h1>Cat List</h1>
+         <h1>Animals</h1>
          <ul>
             <li class="flex-stretch"></li>
-            <li><a href="#animal-adding-page">+</a></li>
+            <li><a href="#" data-activate="#list-add-animal">+</a></li>
          </ul>
       </header>
       <div data-role="main">
-         <ul>
-            <!-- li*10>a[href=#animal-profile-page]>{Animal $} -->
-            <li><a href="#animal-profile-page">Animal 1</a></li>
-            <li><a href="#animal-profile-page">Animal 2</a></li>
-            <li><a href="#animal-profile-page">Animal 3</a></li>
-            <li><a href="#animal-profile-page">Animal 4</a></li>
-            <li><a href="#animal-profile-page">Animal 5</a></li>
-            <li><a href="#animal-profile-page">Animal 6</a></li>
-            <li><a href="#animal-profile-page">Animal 7</a></li>
-            <li><a href="#animal-profile-page">Animal 8</a></li>
-            <li><a href="#animal-profile-page">Animal 9</a></li>
-            <li><a href="#animal-profile-page">Animal 10</a></li>
-         </ul>
+         <div class="overscroll">
+            <ul>
+               <!-- li*10>a[href=#animal-profile-page]>{Animal $} -->
+               <li><a href="#animal-profile-page">Animal 1</a></li>
+               <li><a href="#animal-profile-page">Animal 2</a></li>
+               <li><a href="#animal-profile-page">Animal 3</a></li>
+               <li><a href="#animal-profile-page">Animal 4</a></li>
+               <li><a href="#animal-profile-page">Animal 5</a></li>
+               <li><a href="#animal-profile-page">Animal 6</a></li>
+               <li><a href="#animal-profile-page">Animal 7</a></li>
+               <li><a href="#animal-profile-page">Animal 8</a></li>
+               <li><a href="#animal-profile-page">Animal 9</a></li>
+               <li><a href="#animal-profile-page">Animal 10</a></li>
+               <li><a href="#animal-profile-page">Animal 1</a></li>
+               <li><a href="#animal-profile-page">Animal 2</a></li>
+               <li><a href="#animal-profile-page">Animal 3</a></li>
+               <li><a href="#animal-profile-page">Animal 4</a></li>
+               <li><a href="#animal-profile-page">Animal 5</a></li>
+               <li><a href="#animal-profile-page">Animal 6</a></li>
+               <li><a href="#animal-profile-page">Animal 7</a></li>
+               <li><a href="#animal-profile-page">Animal 8</a></li>
+               <li><a href="#animal-profile-page">Animal 9</a></li>
+               <li><a href="#animal-profile-page">Animal 10</a></li>
+               <li><a href="#animal-profile-page">Animal 1</a></li>
+               <li><a href="#animal-profile-page">Animal 2</a></li>
+               <li><a href="#animal-profile-page">Animal 3</a></li>
+               <li><a href="#animal-profile-page">Animal 4</a></li>
+               <li><a href="#animal-profile-page">Animal 5</a></li>
+               <li><a href="#animal-profile-page">Animal 6</a></li>
+               <li><a href="#animal-profile-page">Animal 7</a></li>
+               <li><a href="#animal-profile-page">Animal 8</a></li>
+               <li><a href="#animal-profile-page">Animal 9</a></li>
+               <li><a href="#animal-profile-page">Animal 10</a></li>
+               <li><a href="#animal-profile-page">Animal 1</a></li>
+               <li><a href="#animal-profile-page">Animal 2</a></li>
+               <li><a href="#animal-profile-page">Animal 3</a></li>
+               <li><a href="#animal-profile-page">Animal 4</a></li>
+               <li><a href="#animal-profile-page">Animal 5</a></li>
+               <li><a href="#animal-profile-page">Animal 6</a></li>
+               <li><a href="#animal-profile-page">Animal 7</a></li>
+               <li><a href="#animal-profile-page">Animal 8</a></li>
+               <li><a href="#animal-profile-page">Animal 9</a></li>
+               <li><a href="#animal-profile-page">Animal 10</a></li>
+            </ul>
+         </div>
       </div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#map-page">Map</a></li>
+            <li><a href="#recent-page">Recent</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
+
+
+      <div class="modal" id="list-add-animal">
+         <div class="modal-back" data-deactivate="#list-add-animal"></div>
+         <form class="modal-popup" id="list-add-animal-form" data-ajax="false">
+            <div class="modal-head"><h1>Add Animal</h1></div>
+            <div class="modal-body">
+               <div class="form-control">
+                  <label for="list-add-name" class="form-label">Animal Name</label>
+                  <input id="list-add-name" type="text" class="form-input" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-type" class="form-label">Animal Type</label>
+                  <input id="list-add-type" type="text" class="form-input" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-breed" class="form-label">Animal Breed</label>
+                  <input id="list-add-breed" type="text" class="form-input" data-role="none">
+               </div>
+            </div>
+            <div class="modal-foot">
+               <input type="submit" value="Save" data-role="none" class="form-button">
+            </div>
+         </form>
+      </div>
    </section>
 
-
-<!--USER-PROFILE PAGE-->
    <section data-role="page" id="user-profile-page">
-       <header data-role="header">
-         <h1>Profile</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-         </ul>
-      </header>
       <div data-role="main">
-         <form id="profile-form" data-ajax="false" style="padding:1em">
+         User Profile<br>
+        <form id="profile-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
                <label for="profile-username" class="form-label">Username</label>
                <input id="profile-username" type="text" class="form-input" data-role="none" placeholder="user">
             </div>
             <div class="form-control">
+               <label for="profile-email" class="form-label">Email</label>
+               <input id="profile-email" type="text" class="form-input" data-role="none" placeholder="user@email.com">
+            </div>
+            <div class="form-control">
                <label for="profile-about" class="form-label">About</label>
                <input id="profile-about" type="text" class="form-input" data-role="none" placeholder="I love cat">
+            </div>
+            <div class="form-control-sib">
+             <a href="#" class="js-logout">Logout</a>
             </div>
             
          </form>
       </div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#map-page">Map</a></li>
+            <li><a href="#recent-page">Recent</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
    </section>
 
-
-<!--ANIMAL-PROFILE PAGE-->
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
          <h1>Animal Profile</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-         </ul>
-      </header>
-      <div data-role="main">
-         
-      </div>
-   </section>
-
-
-<!--ANIMAL-ADDING PAGE-->
-   <section data-role="page" id="animal-adding-page">
-      <header data-role="header">
-         <h1>Adding Animal Profile</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
          </ul>
