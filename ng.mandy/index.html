@@ -13,6 +13,9 @@
    <script src="lib/js/jquery-2.2.4.min.js"></script>
    <script src="js/app.js"></script>
    <script src="js/signin.js"></script>
+   <script src="js/functions.js"></script>
+   <script src="js/pages.js"></script>
+   <script src="js/parts.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -49,12 +52,16 @@
    <section data-role="page" id="signup-page">
       <div data-role="main">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center" >
-            <img src="img/Purr_signup.png" style="width:80vw;height:80vw;" class="icon" alt="">
+            <img src="img/Join_us_logo.png" style="width:60vw;height:60vw;" class="icon" alt="">
          </div>
          <form id="signup-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
                <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your user name">
+            </div>
+            <div class="form-control">
+               <label for="signup-email" class="form-label">Email</label>
+               <input id="signup-email" type="text" class="form-input" data-role="none" placeholder="Type your email">
             </div>
             <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
@@ -82,7 +89,7 @@
 
 
          <div class="modal" id="recent-drawer">
-            <!-- <div class="modal-back" data-deactivate="#recent-drawer"></div> -->
+           <div class="modal-back" data-deactivate="#recent-drawer"></div>
             <div class="modal-drawer bottom">
                <div class="modal-head2">Meet!</div>
                <div class="modal-body">
@@ -94,7 +101,7 @@
                         <option>Charlie</option>
                      </select>
                   </div>
-                  <label class="form-label">How many can do you give?</label>
+                  <label class="form-label">How many can do you feed?</label>
                   <div class="form-select">
                      <select name="can_amount">
                         <option>1</option>
@@ -172,7 +179,7 @@
                      <img src="img/cat1.png" alt="">
                   </div>
                   <div class="animallist-description">
-                     <div class="animallist-name"><h1>Jasper</h1></div>
+                     <div class="animallist-name"><h1>Fur</h1></div>
                      <div class="animallist-color">Black and White</div>
                      
                   </div>
@@ -260,7 +267,7 @@
          <div class="info-value">Jasper</div>   
       </div>
       <div class="profile-info2">
-         <div class="info-name">GAVE CANS</div>
+         <div class="info-name">FED CANS</div>
          <div class="info-value">45 Cans</div>   
       </div>
         
