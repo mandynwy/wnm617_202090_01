@@ -63,8 +63,6 @@ function makeUpload($file,$folder) {
 }
 
 
-
-
 function makeStatement($data) {
    $c = makeConn();
    $t = $data->type;
@@ -202,13 +200,12 @@ function makeStatement($data) {
             `name` = ?,
             `color` = ?,
             `favourite_can_flavor` = ?,
-            `personality` = ?
+            `personality` = ?,
             `description` = ?,
             `img` = ?
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];
-
 
       // DELETE
 

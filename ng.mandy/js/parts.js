@@ -66,6 +66,15 @@ const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
    </div>`;
 }
 
+const FormSelect = ({namespace,name,displayname,type,placeholder,value,options}) => {
+   return `<div class="form-control">
+   <label for="${namespace}-${name}" class="form-label">${displayname}</label>
+   <select name="${namespace}-${name}" id="${namespace}-${name}" class="form-select">`+
+   options.reduce((str,opt) => `${str}<option value="${opt}"`+(opt==value?` selected`:``)+`>${opt}</option>`, '')+
+   `</select>
+   </div>`;
+}
+
 const makeUserEditForm = o => `
 ${FormControl({
    namespace:'user-edit',
@@ -117,21 +126,23 @@ ${FormControl({
    placeholder:'Type the color',
    value:o.color
 })}
-${FormControl({
+${FormSelect({
    namespace:'animal-edit',
    name:'favourite_can_flavor',
    displayname:'Favourite Can Flavor',
    type:'text',
    placeholder:'Type the favourite can flavor',
-   value:o.favourite_can_flavor
+   value:o.favourite_can_flavor,
+   options:['Beef','Chicken','Salmon','Tuna']
 })}
-${FormControl({
+${FormSelect({
    namespace:'animal-edit',
    name:'personality',
    displayname:'Personality',
    type:'text',
-   placeholder:'Type the personaity',
-   value:o.personaity
+   placeholder:'Type the personality',
+   value:o.personality,
+   options:['Aggressive','Chatty','Friendly','Playful','Shy']
 })}
 <div class="form-control">
    <label for="animal-edit-description" class="form-label">Description</label>

@@ -54,16 +54,17 @@ const checkAnimalAddForm = () => {
       params:[sessionStorage.userId,name,color,favourite_can_flavor,personality,description,image]
    }).then(d=>{
       if(d.error) {
+         console.log(d)
          throw d.error;
       }
 
       $("#animal-add-form")[0].reset();
 
-      console.log(d);
       sessionStorage.animalId = d.id;
       $.mobile.navigate($("#animal-add-destination").val());
    })
 }
+
 const checkAnimalEditForm = () => {
    let name = $("#animal-edit-name").val();
    let color = $("#animal-edit-color").val();
@@ -72,11 +73,14 @@ const checkAnimalEditForm = () => {
    let description = $("#animal-edit-description").val();
    let image = $("#animal-edit-image").val();
 
+   console.log([name,color,favourite_can_flavor,personality,description,image,sessionStorage.animalId]);
+
    query({
       type:'update_animal',
-      params:[name,color,favourite_can_flavor,personality,image,description,sessionStorage.animalId]
+      params:[name,color,favourite_can_flavor,personality,description,image,sessionStorage.animalId]
    }).then(d=>{
       if(d.error) {
+         console.log(d);
          throw d.error;
       }
       window.history.back();
