@@ -73,20 +73,17 @@ $(()=>{
 
 
 
-   .on("click",".filter",function(){
+      .on("click",".filter",function(){
       checkListFilter($(this).data());
    })
    .on("change",".image-uploader input",function(){
       checkUpload(this.files[0])
       .then(d=>{
          console.log(d)
-         makeUploaderImage({
-            namespace:'user-upload',
-            folder:'uploads/',
-            name:d.result
-         })
+         makeUploaderImage(this,d.result,'uploads/')
       })
    })
+
 
 
 

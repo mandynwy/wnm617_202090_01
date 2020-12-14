@@ -38,16 +38,20 @@ const checkUserEditForm = () => {
 
 
 
+
 const checkAnimalAddForm = () => {
    let name = $("#animal-add-name").val();
    let color = $("#animal-add-color").val();
    let favourite_can_flavor = $("#animal-add-favourite_can_flavor").val();
    let personality = $("#animal-add-personality").val();
    let description = $("#animal-add-description").val();
+   let image = $("#animal-add-image").val();
+
+   console.log([sessionStorage.userId,name,color,favourite_can_flavor,personality,description,image]);
 
    query({
       type:'insert_animal',
-      params:[sessionStorage.userId,name,color,favourite_can_flavor,personality,description]
+      params:[sessionStorage.userId,name,color,favourite_can_flavor,personality,description,image]
    }).then(d=>{
       if(d.error) {
          throw d.error;
@@ -66,10 +70,11 @@ const checkAnimalEditForm = () => {
    let favourite_can_flavor = $("#animal-edit-favourite_can_flavor").val();
    let personality = $("#animal-edit-personality").val();
    let description = $("#animal-edit-description").val();
+   let image = $("#animal-edit-image").val();
 
    query({
       type:'update_animal',
-      params:[name,color,favourite_can_flavor,personality,description,sessionStorage.animalId]
+      params:[name,color,favourite_can_flavor,personality,image,description,sessionStorage.animalId]
    }).then(d=>{
       if(d.error) {
          throw d.error;

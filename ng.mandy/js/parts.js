@@ -97,9 +97,10 @@ ${FormControl({
 
 
 const makeAnimalEditForm = o => `
-<!--<div class="user-profile-image">
-   <img src="${o.img}">
-</div>-->
+<input type="hidden" id="animal-edit-image" value="${o.img}">
+<label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
+   <input type="file" data-role="none" id="animal-edit-input">
+</label>
 ${FormControl({
    namespace:'animal-edit',
    name:'name',
@@ -161,8 +162,6 @@ const makeFilterList = (animals) => {
    return `
    <div class="filter" data-field="type" data-value="">All</div>
    |
-   ${filterList(animals,'name')}
-   |
    ${filterList(animals,'color')}
    |
    ${filterList(animals,'favourite_can_flavor')}
@@ -175,9 +174,8 @@ const makeFilterList = (animals) => {
 
 
 
-const makeUploaderImage = ({namespace,folder,name}) => {
-   console.log(namespace,folder,name)
-   $(`#${namespace}-image`).val(folder+name);
-   $(`#${namespace}-page .image-uploader`)
-      .css({'background-image':`url(${folder+name}`})
+const makeUploaderImage = (el, name, folder='') => {
+
+   $(el).parent().css({'background-image':`url(${folder+name}`}).addClass('picked')
+      .prev().val(folder+name);
 }

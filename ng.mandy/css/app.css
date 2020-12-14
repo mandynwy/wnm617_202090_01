@@ -16,7 +16,7 @@
 
     --color-main-light: #d5fffe;
     --color-main-medium: #5362c7;
-    --color-main-dark: #7829ff;
+    --color-main-dark: #9662da;
 
    --color-white:#fff;
    --color-black:#000;
@@ -143,12 +143,17 @@ a {
    cursor:pointer;
 }
 
+
+#list-search-form{
+ margin:0.5em 0.5em;
+
+}
 .hotdog {
-   width: 100%;
+  
    display: inline-flex;
    background-color: var(--color-neutral-light);
    padding: 0.5em 1em;
-   border-radius: 2em;
+   border-width: 1em;
    line-height:1;
 }
 [data-role="header"]>.hotdog {
@@ -185,11 +190,22 @@ a {
    overflow:hidden;
    position:relative;
 }
-.ui-header,
-.ui-footer {
+.ui-header {
    flex: none;
    height:var(--header-height);
    line-height:var(--header-height);
+   border-width:0;
+   background-color:var(--color-main-dark);
+   box-shadow:0 0 5px rgba(0,0,0,0.15);
+   position:relative;
+   overflow:hidden;
+   color: white;
+}
+
+
+.ui-footer {
+   flex: none;
+  
    border-width:0;
    background-color:var(--color-white);
    box-shadow:0 0 5px rgba(0,0,0,0.15);
@@ -482,6 +498,7 @@ a {
 
 /* CIRCLE */
 .btn-circle {
+  display:inline-block;
    background-color:var(--color-white);
    width:3rem;
    height:3rem;
@@ -491,6 +508,10 @@ a {
    border-radius:2em;
    box-shadow:2px 2px 5px rgba(0,0,0,0.15);
 }
+
+
+
+
 .modal-close-floater {
     position: absolute;
 }
@@ -500,6 +521,21 @@ a {
 .modal-close-floater.top {
   top:-1em;
   transform: translateY(-100%);
+}
+
+
+/* Profile */
+.user-profile-image {
+   position:relative;
+   width:50%;height:50%;padding-top:1em;border-radius: 50%
+}
+.user-profile-image>img {
+   width:calc(100vmin - 4em);
+   height:calc(100vmin - 4em);
+   margin:2em;
+   border-radius:50%;
+
+   object-fit:cover;
 }
 
 .profile-info{
@@ -644,8 +680,58 @@ a {
    background-repeat:no-repeat;
 }
 
+#animal-profile-page [data-role='main'] {
+    display: flex;
+    flex-direction: column;
+}
+.profile-top {
+   flex: 1;
+    position: relative;
+    overflow:auto;
+}
+.profile-bottom {
+    
 
 
+      height: 30vh;
+    flex: none;
+    overflow:auto;
+    position:relative;
+}
+
+
+.animal-profile {
+  padding:1em;
+}
+.animal-profile-image img {
+  width:30vw;
+  height:30vw;
+  object-fit:cover;
+}
+
+
+.image-uploader.thumbnail {
+   width:5em;
+   height:5em;
+   border-radius:0.5em;
+   background-position:center;
+   background-size:cover;
+   position:relative;
+   border:2px solid white;
+   box-shadow:0 1px 3px rgba(0,0,0,0.2);
+}
+.image-uploader.thumbnail::before {
+   color:black;
+   content:'+';
+   position:absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   vertical-align:middle;
+   font-size:3em;
+}
+.image-uploader.thumbnail.picked::before {
+   content:'';
 
 
 

@@ -49,7 +49,6 @@
                <label for="signin-password" class="form-label">Password</label>
                <input id="signin-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
             </div>
-            <div id="err-msg">Invalid username or password</div>
             <div class="form-control-sib">
                <input type="submit" data-role="none" class="form-button" value="Sign In">
             </div>
@@ -57,9 +56,15 @@
                Don't have an account? <a href="#signup-page">Sign Up</a>!
             </div>
          </form>
-      </div>
+         </div>
 
+      <div class="modal" id="signin-warning">
+         <div class="modal-toast top" data-deactivate="#signin-warning">
+            <div class="message">Failure</div>
+         </div>
+      </div>
    </section>
+
 <!--signup-page-->
    <section data-role="page" id="signup-page">
       <div data-role="main">
@@ -67,6 +72,10 @@
             <img src="img/Join_us_logo.png" style="width:60vw;height:60vw;" class="icon" alt="">
          </div>
          <form id="signup-form" data-ajax="false" style="padding:1em">
+            <div class="form-control">
+               <label for="signup-name" class="form-label">Name</label>
+               <input id="signup-name" type="text" class="form-input" data-role="none" placeholder="Type your name">
+            </div>
             <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
                <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your user name">
@@ -80,11 +89,14 @@
                <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
             </div>
             <div class="form-control">
-               <label for="signup-confirm-password" class="form-label">Confirm Password</label>
-               <input id="signup-confirm-password" type="text" class="form-input" data-role="none" placeholder="Re-enter Password">
+               <label for="signup-password-confirm" class="form-label">Confirm Password</label>
+               <input id="signup-password-confirm" type="text" class="form-input" data-role="none" placeholder="Re-enter Password">
             </div>
-            <div class="form-control-sib" style="padding:1em">
-               <a href="#list-page" class="form-button">Sign Up</a>
+            <!--<div class="form-control-sib" style="padding:1em">
+               <a href="#list-page" class="form-button">Sign Up</a>-->
+               <div class="form-control-sib">
+               <button type="submit" class="form-button" data-role="none">Sign Up</button>
+            </div>
             </div>
             <div class="form-control" style="text-align:center;font-size:0.8em">
                Already have an account? <a href="#signin-page">Sign In</a>!
@@ -174,9 +186,9 @@
       </div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page"> <img src="img/icon_paw.png" style="width:10vw;height:10vw; margin-top:0.5em" alt=""></a></li>
-            <li><a href="#list-page"><img src="img/icon_cat.png" style="width:10vw;height:10vw; margin-top:0.5em"alt=""></a></li>
-            <li><a href="#user-profile-page"><img src="img/icon_profile.png" style="width:10vw;height:10vw; margin-top:0.5em"alt=""></a></li>
+            <li><a href="#recent-page"> <img src="img/icon_location.png" style="width:20vw;height:20vw; margin-top:0.5em" alt=""></a></li>
+            <li><a href="#list-page"><img src="img/icon_cathome.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
+            <li><a href="#user-profile-page"><img src="img/icon_profile2.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
          </ul>
       </footer>
 
@@ -189,6 +201,7 @@
 
 
 <!--list-page-->
+
    <section data-role="page" id="list-page">
       <form class="hotdog" id="list-search-form" data-ajax="false">
             <input type="search" id="list-search-input" data-role="none" placeholder="Search">
@@ -207,15 +220,17 @@
          <div class="overscroll">
             <div class="animallist"></div>
          </div>
-         <div class="floater right bottom"><a class="btn-circle" href="#animal-add-page">&plus;</a></div>
+         <div class="floater right bottom">
+            <a class="btn-circle" href="#animal-add-page">&plus;</a></div>
       </div>
-       <footer data-role="footer">
+        <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page"> <img src="img/icon_paw.png" style="width:10vw;height:10vw; margin-top:0.5em" alt=""></a></li>
-            <li><a href="#list-page"><img src="img/icon_cat.png" style="width:10vw;height:10vw; margin-top:0.5em"alt=""></a></li>
-            <li><a href="#user-profile-page"><img src="img/icon_profile.png" style="width:10vw;height:10vw; margin-top:0.5em"alt=""></a></li>
+            <li><a href="#recent-page"> <img src="img/icon_location.png" style="width:20vw;height:20vw; margin-top:0.5em" alt=""></a></li>
+            <li><a href="#list-page"><img src="img/icon_cathome.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
+            <li><a href="#user-profile-page"><img src="img/icon_profile2.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
          </ul>
       </footer>
+   </section>
 
 
 
@@ -267,14 +282,12 @@
          </ul>
       </header>
       <div data-role="main">
-         <div class="user-profile-image flex-stretch display-flex flex-align-center flex-justify-center">
+         <!--<div class="user-profile-image flex-stretch display-flex flex-align-center flex-justify-center">
          <img src="http://via.placeholder.com/400/724/fff/?text=user1" style="width:50%;height:50%;padding-top:1em;border-radius: 50%" class="icon"alt="user-profile-pic">
          <a href="#user-upload-page" class="floater bottom right"><img class="icon" src="img/icon_cat.png" alt=""></a>
-      </div>
-         <div class="profile-info">
-            <h2>Shasta</h2>
-         <h3>@shasta_1</h3>
-      </div>
+      </div>-->
+
+         <div class="profile"></div>
       <div class="profile-info2">
          <div class="info-name">MET CAT</div>
          <div class="info-value">21 Cats</div>   
@@ -290,11 +303,11 @@
         
          
       </div>
-       <footer data-role="footer">
+        <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page"> <img src="img/icon_paw.png" style="width:10vw;height:10vw; margin-top:0.5em" alt=""></a></li>
-            <li><a href="#list-page"><img src="img/icon_cat.png" style="width:10vw;height:10vw; margin-top:0.5em"alt=""></a></li>
-            <li><a href="#user-profile-page"><img src="img/icon_profile.png" style="width:10vw;height:10vw; margin-top:0.5em"alt=""></a></li>
+            <li><a href="#recent-page"> <img src="img/icon_location.png" style="width:20vw;height:20vw; margin-top:0.5em" alt=""></a></li>
+            <li><a href="#list-page"><img src="img/icon_cathome.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
+            <li><a href="#user-profile-page"><img src="img/icon_profile2.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
          </ul>
       </footer>
    </section>
@@ -550,7 +563,7 @@
          </div>
       </div>
    </section>-->
-
+<!--animal-profile-page-->
     <section data-role="page" id="animal-profile-page">
       <header data-role="header">
          <h1>Animal Profile</h1>
@@ -566,13 +579,15 @@
       </header>
       <div data-role="main">
          <div class="profile-top">
-            <div class="map"></div>
-            <div class="floater right bottom">
-               <a href="#location-add-page" class="btn-circle">&plus;</a>
-            </div>
+            <div class="profile"></div>
          </div>
          <div class="profile-bottom">
-            <div class="profile"></div>
+            <div class="map"></div>
+            <div class="floater right bottom">
+               <a href="#location-add-page" class="btn-circle"><img src="img/icon_addlocation.png"  style="width:12vw;height:12vw; "alt=""></a>
+
+            </div>
+            
          </div>
       </div>
    </section>
@@ -608,6 +623,10 @@
             <form id="animal-add-form" data-ajax="false" style="padding:1em">
             
                <input type="hidden" id="animal-add-destination" value="#list-page">
+               <input type="hidden" id="animal-add-image">
+               <label class="image-uploader thumbnail">
+                  <input type="file" data-role="none" id="animal-add-upload">
+               </label>
             
                <div class="form-control">
                   <label for="animal-add-name" class="form-label">Name</label>
@@ -619,7 +638,22 @@
                </div>
                <div class="form-control">
                   <label for="animal-add-favourite_can_flavor" class="form-label">Favourite Can Flavor</label>
-                  <input id="animal-add-favourite_can_flavor" type="text" class="form-input" data-role="none">
+                  <select name="animal-add-favourite_can_flavor" id="animal-add-favourite_can_flavor" class="form-select">
+                     <option value="Beef">Beef</option>
+                     <option value="Chicken">Chicken</option>
+                     <option value="Salmon">Salmon</option>
+                     <option value="Tuna">Tuna</option>
+                  </select>
+               </div>
+               <div class="form-control">
+                  <label for="animal-add-personality" class="form-label">Personality</label>
+                  <select name="animal-add-personality" id="animal-add-personality" class="form-select">
+                     <option value="Aggressive">Aggressive</option>
+                     <option value="Chatty">Chatty</option>
+                     <option value="Friendly">Friendly</option>
+                     <option value="Playful">Playful</option>
+                     <option value="Shy">Shy</option>
+                  </select>
                </div>
                <div class="form-control">
                   <label for="animal-add-description" class="form-label">Description</label>
@@ -629,15 +663,6 @@
          </div>
       </div>
    </section>
-
-
-
-
-
-
-
-
-
 
 
 
