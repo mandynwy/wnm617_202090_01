@@ -26,7 +26,7 @@ const makeUserProfile = templater(o=>`
    </div>
    `);
 
-const makeAnimalProfile = templater(o=>`
+const makeAnimalProfile = pet_times => templater(o=>`
 <div class="animal-profile">
    <div class="animal-profile-image">
       <img src="${o.img}" alt="">
@@ -36,6 +36,7 @@ const makeAnimalProfile = templater(o=>`
    <div>Favourite Can Flavor ${o.favourite_can_flavor}</div>
    <div>Personality ${o.personality}</div>
    <div><p>${o.description}</p></div>
+   <div><p>Petted ${pet_times} Times!</p></div>
    <div><a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a></div></div>
 </div>`);
 
@@ -166,23 +167,15 @@ const capitalize = s => s[0].toUpperCase()+s.substr(1);
 
 const filterList = (animals,type) => {
    let a = [...(new Set(animals.map(o=>o[type])))];
-   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${capitalize(o)}</div>`)(a);
+   return templater(o=>`| <div class="filter" data-field="${type}" data-value="${o}">${capitalize(o)}</div>`)(a);
 }
 
 const makeFilterList = (animals) => {
    return `
-   <div class="filter" data-field="type" data-value="">All</div>
-   |
-   ${filterList(animals,'color')}
-   |
+   <div class="filter" data-field="favourite_can_flavor" data-value="">All</div>
    ${filterList(animals,'favourite_can_flavor')}
-   |
-   ${filterList(animals,'personality')}
    `
 }
-
-
-
 
 
 const makeUploaderImage = (el, name, folder='') => {

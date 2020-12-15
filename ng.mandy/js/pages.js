@@ -11,9 +11,6 @@ const ListPage = async() => {
 }
 
 
-
-
-
 const RecentPage = async() => {
    let d = await query({type:'recent_locations',params:[sessionStorage.userId]});
 
@@ -92,27 +89,20 @@ const UserUploadPage = async() => {
 }
 
 
-
-
-
 const AnimalProfilePage = async() => {
-   query({type:'animal_by_id',params:[sessionStorage.animalId]})
-   .then(d=>{
-      console.log(d);
-      $("#animal-profile-page .profile")
-         .html(makeAnimalProfile(d.result))
-   });
+   let d = await query({type:'animal_by_id',params:[sessionStorage.animalId]});
+   console.log(d);
 
-   query({type:'locations_by_animal_id',params:[sessionStorage.animalId]})
-   .then(d=>{
-      console.log(d);
-      makeMap("#animal-profile-page .map").then(map_el=>{
-         makeMarkers(map_el,d.result)
-      });
-   });
-
-
+   let dl = await query({type:'locations_by_animal_id',params:[sessionStorage.animalId]});
+   console.log(dl);
    
+   console.log(dl.result.length);
+   $("#animal-profile-page .profile")
+         .html(makeAnimalProfile(dl.result.length)(d.result));
+
+   makeMap("#animal-profile-page .map").then(map_el=>{
+      makeMarkers(map_el, dl.result)
+   });   
 }
 
 const AnimalEditPage = async() => {

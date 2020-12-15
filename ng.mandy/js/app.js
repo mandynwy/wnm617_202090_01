@@ -73,7 +73,7 @@ $(()=>{
 
 
 
-      .on("click",".filter",function(){
+   .on("click",".filter",function(){
       checkListFilter($(this).data());
    })
    .on("change",".image-uploader input",function(){

@@ -111,11 +111,6 @@ const checkLocationAddForm = () => {
    })
 }
 
-
-
-
-
-
 const checkAnimalDelete = id => {
    query({
       type:'delete_animal',
@@ -129,11 +124,6 @@ const checkAnimalDelete = id => {
 }
 
 
-
-
-
-
-
 const checkSearchForm = async() => {
    let s = $("#list-search-input").val()
    console.log(s);
@@ -143,9 +133,7 @@ const checkSearchForm = async() => {
       params:[s,sessionStorage.userId]
    })
 
-   drawAnimalList(r.result,"Search produced no results.");
-
-   console.log(r)
+   drawAnimalList(r.result, "<br>Search produced no results.");
 }
 
 
@@ -161,14 +149,8 @@ const checkListFilter = async ({field,value}) => {
          params:[field,value,sessionStorage.userId]
       });
 
-   drawAnimalList(r.result,"Search produced no results.");
+   drawAnimalList(r.result, "<br>Filter produced no results.");
 }
-
-
-
-
-
-
 
 
 const checkUpload = file => {
