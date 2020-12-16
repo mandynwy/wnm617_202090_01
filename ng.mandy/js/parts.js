@@ -15,15 +15,23 @@ const makeAnimalList = templater(o=>`
 
 const makeUserProfile = templater(o=>`
    <div class="user-profile-image">
-      <img src="${o.img}" alt="">
-      <a href="#user-upload-page" class="floater bottom right"><img class="icon" src="img/icon/edit.svg" alt=""></a></a>
+      <a href="#user-upload-page">
+         <img src="${o.img}" alt="">
+      </a>
    </div>
    <div style="padding:1em">
       <h2>${o.name}</h2>
       <h3>@${o.username}</h3>
       <h3>${o.email}</h3>
-      <div class="floater top right" style="font-size:1.25em"><a href="#user-settings-page">&equiv;</a></div>
    </div>
+   <div class="profile-info2">
+      <div class="info-name">MET CAT</div>
+      <div class="info-value">21 Cats</div>   
+   </div>
+   <div class="profile-info2">
+      <div class="info-name">MOST MET CAT</div>
+      <div class="info-value">Jasper</div>   
+   </div>  
    `);
 
 const makeAnimalProfile = pet_times => templater(o=>`
@@ -108,8 +116,6 @@ ${FormControl({
 `;
 
 
-
-
 const makeAnimalEditForm = o => `
 <input type="hidden" id="animal-edit-image" value="${o.img}">
 <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
@@ -154,9 +160,6 @@ ${FormSelect({
    <textarea id="animal-edit-description" class="form-input" data-role="none" placeholder="Type a description" style="height:6em">${o.description}</textarea>
 </div>
 `;
-
-
-
 
 
 const drawAnimalList = (a,empty_phrase="No cats yet, you should add some.") => {

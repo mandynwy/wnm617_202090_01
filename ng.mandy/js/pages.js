@@ -120,6 +120,8 @@ const LocationAddPage = async() => {
    let map_el = await makeMap("#location-add-page .map");
    makeMarkers(map_el,[]);
 
+   console.log(sessionStorage);
+
    let map = map_el.data('map');
 
    let animals = await query({type:'animals_by_user_id',params:[sessionStorage.userId]});
