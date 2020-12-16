@@ -564,13 +564,9 @@
       <header data-role="header">
          <h1>Animal Profile</h1>
          <ul>
-            <li><a href="#" data-rel="back">
-               <img src="img/icon/arrow-left.svg" alt="" class="icon">
-            </a></li>
+            <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch-2"></li>
-            <li><a href="#animal-edit-page">
-               <img src="img/icon/edit.svg" alt="" class="icon">
-            </a></li>
+            <li><a href="#animal-edit-page">Edit</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -668,16 +664,43 @@
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch-2"></li>
-            <li><a href="#location-description-page">Next</a></li>
+            <!-- <li><a href="#location-description-page">Next</a></li> -->
          </ul>
       </header>
       <div data-role="main">
          <input type="hidden" id="location-add-lat">
          <input type="hidden" id="location-add-lng">
          <div class="map"></div>
+         <div class="modal" id="recent-drawer">
+           <!--<div class="modal-back" data-deactivate="#recent-drawer"></div>-->
+            <div class="modal-drawer bottom">
+               <div class="modal-head2">Meet!</div>
+               <div class="modal-body">
+                  <div class="form-control" id="location-met-animal">
+                  </div>
+                  <div class="display-flex">
+                     <div class="flex-none">
+                        <input type="hidden" id="location-add-photo">
+                        <label class="image-uploader thumbnail">
+                           <input type="file" data-role="none" id="location-add-upload">
+                        </label>
+                     </div>
+                     <div class="flex-stretch form-control">
+                        <label for="location-add-description" class="form-label">What did you guys do?</label>
+                        <textarea id="location-add-description" class="form-input" data-role="none"></textarea>
+                     </div>
+                  </div>
+                  <div class="form-control" style="padding:1em">
+                     <a href="#" class="js-location-add form-button-save">Pet!</a>
+                  </div>
+               </div>
+             </div>
+           </div>
+         </div>
       </div>
    </section>
 
+   <!--
    <section data-role="page" id="location-description-page">
       <header data-role="header">
          <h1>Describe the Animal</h1>
@@ -703,8 +726,7 @@
          </div>
       </div>
    </section>
-
-
+   -->
 
 
 </body>

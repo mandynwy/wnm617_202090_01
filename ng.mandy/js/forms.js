@@ -88,18 +88,21 @@ const checkAnimalEditForm = () => {
 }
 
 
-
-
 const checkLocationAddForm = () => {
+   let animalId = $("#location-add-animal-id").val();
    let lat = $("#location-add-lat").val();
    let lng = $("#location-add-lng").val();
    let description = $("#location-add-description").val();
+   let photo = $("#location-add-photo").val();
+
+   console.log([animalId,+lat,+lng,description,photo]);
 
    query({
       type:'insert_location',
-      params:[sessionStorage.animalId,+lat,+lng,description]
+      params:[animalId,+lat,+lng,description,photo]
    }).then(d=>{
       if(d.error) {
+         console.log(d);
          throw d.error;
       }
 

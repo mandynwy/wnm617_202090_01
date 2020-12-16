@@ -57,9 +57,6 @@ const makeAnimalPopup = o => `
 `;
 
 
-
-
-
 const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
    return `<div class="form-control">
    <label for="${namespace}-${name}" class="form-label">${displayname}</label>
@@ -74,6 +71,13 @@ const FormSelect = ({namespace,name,displayname,type,placeholder,value,options})
    options.reduce((str,opt) => `${str}<option value="${opt}"`+(opt==value?` selected`:``)+`>${opt}</option>`, '')+
    `</select>
    </div>`;
+}
+
+const makeAnimalIdOptions = (a,aid) => {
+   return `<label class="form-label">Who did you meet?</label>
+   <select class="form-select" name="location-add-animal-id" id="location-add-animal-id">`+
+   a.reduce((str,opt) => `${str}<option value="${opt.id}"`+(opt.id==aid?` selected`:``)+`>${opt.name}</option>`, '')+
+   `</select>`;
 }
 
 const makeUserEditForm = o => `
