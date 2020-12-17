@@ -13,35 +13,41 @@ const makeAnimalList = templater(o=>`
    </div>
    `);
 
-const makeUserProfile = templater(o=>`
+const makeUserProfile = submitted_cats => templater(o=>`
    <div class="user-profile-image ">
       <a href="#user-upload-page">
          <img src="${o.img}" alt="">
       </a>
-   </div>
-   <div style="padding:1em">
       <h2>${o.name}</h2>
       <h3>@${o.username}</h3>
-      <h3>${o.email}</h3>
    </div>
-   <div class="profile-info2">
-      <div class="info-name">MET CAT</div>
-      <div class="info-value">21 Cats</div>   
+   <div class="profile-info3">
+      <div class="profile-info2">
+         <div class="info-name">SUBMITTED</div>
+         <div class="info-value">${submitted_cats} Cat Profiles</div>
+      </div>
+      <!--<div class="profile-info2">
+         <div class="info-name">MET</div>
+         <div class="info-value"> Cats</div>
+      </div>
+      <div class="profile-info2">
+         <div class="info-name">MOST FREQUENTLY MET</div>
+         <div class="info-value"></div>
+         <div class="animal-profile-image">
+            <img src="" class="icon profile-icon" alt="">
+         </div>
+      </div>-->
    </div>
-   <div class="profile-info2">
-      <div class="info-name">MOST MET CAT</div>
-      <div class="info-value">Jasper</div>   
-   </div>  
    `);
 
 const makeAnimalProfile = pet_times => templater(o=>`
 <div class="animal-profile">
    <div class="animal-profile-image flex-stretch display-flex flex-align-center flex-justify-center">
-      <img src="${o.img}"  style="width:30%;height:30%;border-radius: 20%;margin-top:0.5em;" class="icon"alt="cat-profile-pic">
+      <img src="${o.img}" class="icon profile-icon" alt="">
    </div>
-     <div class="profile-info">
-     <div class="info-name1"><strong>${o.name}</strong></div>
-     <div class="info-value">Petted<strong> ${pet_times}</strong> Times!</div></div>
+   <div class="profile-info">
+   <div class="info-name1"><strong>${o.name}</strong></div>
+   <div class="info-value">Petted<strong> ${pet_times}</strong> Times!</div></div>
 
 
    <div class="profile-info2">
@@ -58,11 +64,12 @@ const makeAnimalProfile = pet_times => templater(o=>`
 
    <div class="profile-info2">
    <div class="info-name">Activity </div>
-    <div class="info-value">${o.description}</div></div>
+   <div class="info-value">${o.description}</div></div>
 
-   
-   <div class="profile-info2"><div><a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a></div></div>
-</div></div>`);
+   <div class="profile-info2">
+      <a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a>
+   </div>
+</div>`);
 
 
 const makeAnimalPopup = o => `

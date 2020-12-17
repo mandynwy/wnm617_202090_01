@@ -55,11 +55,12 @@ const RecentPage = async() => {
 
 const UserProfilePage = async() => {
    let d = await query({type:'user_by_id',params:[sessionStorage.userId]});
-
    console.log(d);
 
+   let submitted = await query({type:'animals_by_user_id',params:[sessionStorage.userId]});
+
    $("#user-profile-page .profile")
-      .html(makeUserProfile(d.result))
+      .html(makeUserProfile(submitted.result.length)(d.result));
 }
 
 const UserEditPage = async() => {
