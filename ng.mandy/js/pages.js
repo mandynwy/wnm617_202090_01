@@ -131,6 +131,13 @@ const AnimalProfilePage = async() => {
    });
 }
 
+
+const AnimalAddPage = async() => {
+   $("#animal-add-form")
+      .html(makeAnimalAddForm);
+}
+
+
 const AnimalEditPage = async() => {
    let d = await query({type:'animal_by_id',params:[sessionStorage.animalId]});
 

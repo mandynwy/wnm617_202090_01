@@ -141,6 +141,52 @@ ${FormControl({
 })}
 `;
 
+const makeAnimalAddForm = `
+<input type="hidden" id="animal-add-destination" value="#list-page">
+<input type="hidden" id="animal-add-image">
+<label class="image-uploader thumbnail">
+   <input type="file" data-role="none" id="animal-add-upload">
+</label>
+${FormControl({
+   namespace:'animal-add',
+   name:'name',
+   displayname:'Name',
+   type:'text',
+   placeholder:'Type the cat name',
+   value:''
+})}
+${FormControl({
+   namespace:'animal-add',
+   name:'color',
+   displayname:'Color',
+   type:'text',
+   placeholder:'Type the color',
+   value:''
+})}
+${FormSelect({
+   namespace:'animal-add',
+   name:'favourite_can_flavor',
+   displayname:'Favourite Can Flavor',
+   type:'text',
+   placeholder:'Type the favourite can flavor',
+   value:'Beef',
+   options:['Beef','Chicken','Salmon','Tuna']
+})}
+${FormSelect({
+   namespace:'animal-add',
+   name:'personality',
+   displayname:'Personality',
+   type:'text',
+   placeholder:'Type the personality',
+   value:'Aggressive',
+   options:['Aggressive','Chatty','Friendly','Playful','Shy']
+})}
+<div class="form-control">
+   <label for="animal-add-description" class="form-label">Description</label>
+   <textarea id="animal-add-description" class="form-input" data-role="none" placeholder="Type a description" style="height:6em"></textarea>
+</div>
+`;
+
 
 const makeAnimalEditForm = o => `
 <input type="hidden" id="animal-edit-image" value="${o.img}">
