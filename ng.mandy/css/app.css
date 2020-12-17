@@ -104,15 +104,21 @@ a {
   margin-top:1em;
   text-align: center;
 }
+.form-control1 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
 
+}
 .form-control {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+
 }
 
 
 .ui-mobile label.form-label {
-    margin: 0 1em 0.5em;
+ 
     font-size: 0.8em;
     color: var(--color-black);
 }
@@ -142,6 +148,61 @@ a {
    text-decoration:none;
    cursor:pointer;
 }
+
+
+
+
+.form-label{
+  display:block;
+  width:100%;
+  font-family: var(--font-serif);
+    font-size: 0.8em;
+    color: var(--color-main-medium);
+    margin-bottom: 0.2em;
+
+}
+
+.form-select{
+     width: 100%;
+    padding: 1em;
+    font-family: var(--font-sans);
+    color: var(--color-main-main);
+    background-color: var(--color-neutral-lighter);
+    position: relative;
+    border-width: 0;
+}
+}
+
+.form-select select{
+    color:black;
+    display: inline-block;
+    vertical-align: baseline;
+    width: 100%;
+    white-space: nowrap;
+    border-width: 0.5;
+    color: inherit;
+    font: inherit;
+    padding: 0.5em 1em;
+    outline: 0;
+    text-align: center;
+    background-color: var(--color-neutral-lighter);
+    text-decoration: none;
+    cursor: pointer;
+}
+.form-button-save{
+   width: 100%;
+    display: inline-block;
+    border-width: 0;
+    background-color: var(--color-main-dark);
+    color: var(--color-white);
+    padding: 1em 1em;
+    border-radius: 30px;
+    border: 2px solid var(--color-main-dark);
+    font: inherit;
+    outline: 0;
+    text-align: center
+}
+
 
 
 #list-search-form{
@@ -395,10 +456,10 @@ a {
 }
 
 .modal-head2{
-  background-color: var(--color-main-medium);
-  color:white;
-  font-size:1.7em;
-  font-weight: 900;
+  background-color: white;
+    color: #9662da;
+    font-size: 1.3em;
+    font-weight: 900;
     padding: 0.5em 1em;
     text-align: center;
 
@@ -526,7 +587,7 @@ a {
 
 /* Profile */
 .profile{
-  background-color: var(--color-neutral-lighter);
+  
 }
 .user-profile-image {
    position:relative;
@@ -562,7 +623,7 @@ a {
     flex-direction: column;
     border-width: 0;
     
-    padding: 0.5em 1em;
+    padding: 0.5em 1.5em;
     font: inherit;
     outline: 0;
     margin:0em 0em;
@@ -601,59 +662,13 @@ a {
 }
 
 
-.form-label{
-  display:block;
-  width:100%;
-  font-family: var(--font-serif);
-    font-size: 0.8em;
-    color: var(--color-main-medium);
-    margin-bottom: 0.2em;
-
-}
-
-.form-select{
-  color:var(--color-main-main);
-  background-color: var(--color-neutral-lighter);
-  position:relative;
-}
-
-.form-select select{
-    color:black;
-    display: inline-block;
-    vertical-align: baseline;
-    width: 100%;
-    white-space: nowrap;
-    border-width: 0.5;
-    color: inherit;
-    font: inherit;
-    padding: 0.5em 1em;
-    outline: 0;
-    text-align: center;
-    background-color: var(--color-neutral-lighter);
-    text-decoration: none;
-    cursor: pointer;
-}
-.form-button-save{
-   width: 100%;
-    display: inline-block;
-    border-width: 0;
-    background-color: var(--color-white);
-    color:var(--color-main-medium);
-    padding: 1em 1em;
-    border-radius: 30px;
-    border:2px solid var(--color-main-medium);
-    
-    font: inherit;
-    outline: 0;
-    text-align:center;
-}
 
 
 
 
 #recent-drawer .modal-drawer {
-  margin:1em;
-  width:calc(100% - 2em);
+      width: calc(100%);
+    height: calc(50%);
 }
 
 .animal-popup img {
@@ -707,6 +722,7 @@ a {
    flex: 1;
     position: relative;
     overflow:auto;
+    background-color: var(--color-neutral-lighter);
 }
 .profile-bottom {
     
