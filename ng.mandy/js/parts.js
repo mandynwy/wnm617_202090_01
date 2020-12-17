@@ -14,7 +14,7 @@ const makeAnimalList = templater(o=>`
    `);
 
 const makeUserProfile = templater(o=>`
-   <div class="user-profile-image">
+   <div class="user-profile-image ">
       <a href="#user-upload-page">
          <img src="${o.img}" alt="">
       </a>
@@ -36,17 +36,33 @@ const makeUserProfile = templater(o=>`
 
 const makeAnimalProfile = pet_times => templater(o=>`
 <div class="animal-profile">
-   <div class="animal-profile-image">
-      <img src="${o.img}" alt="">
+   <div class="animal-profile-image flex-stretch display-flex flex-align-center flex-justify-center">
+      <img src="${o.img}"  style="width:30%;height:30%;border-radius: 20%;margin-top:0.5em;" class="icon"alt="cat-profile-pic">
    </div>
-   <h2>${o.name}</h2>
-   <div>color ${o.color}</div>
-   <div>Favourite Can Flavor ${o.favourite_can_flavor}</div>
-   <div>Personality ${o.personality}</div>
-   <div><p>${o.description}</p></div>
-   <div><p>Petted ${pet_times} Times!</p></div>
-   <div><a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a></div></div>
-</div>`);
+     <div class="profile-info">
+     <div class="info-name1"><strong>${o.name}</strong></div>
+     <div class="info-value">Petted<strong> ${pet_times}</strong> Times!</div></div>
+
+
+   <div class="profile-info2">
+   <div class="info-name">Color</div>
+   <div class="info-value">${o.color}</div></div>
+
+   <div class="profile-info2">
+   <div class="info-name">Favourite Can Food</div>
+    <div class="info-value">${o.favourite_can_flavor}</div></div>
+
+   <div class="profile-info2">
+   <div class="info-name">Personality </div>
+   <div class="info-value">${o.personality}</div></div>
+
+   <div class="profile-info2">
+   <div class="info-name">Activity </div>
+    <div class="info-value">${o.description}</div></div>
+
+   
+   <div class="profile-info2"><div><a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a></div></div>
+</div></div>`);
 
 
 const makeAnimalPopup = o => `

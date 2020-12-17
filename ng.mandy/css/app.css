@@ -525,6 +525,9 @@ a {
 
 
 /* Profile */
+.profile{
+  background-color: var(--color-neutral-lighter);
+}
 .user-profile-image {
    position:relative;
    width:100%;
@@ -544,30 +547,42 @@ a {
 
 .profile-info{
   text-align: center;
+   padding: 0.5em 1em;
+}
+.info-name1{
+
+  font-family: var(--font-serif);
+  text-align: center;
+   font-size: 1.5em;
+    color: var(--color-main-medium);
 }
 
 .profile-info2{
     display:flex;
     flex-direction: column;
     border-width: 0;
-    background-color: var(--color-neutral-lighter);
-    padding: 1em 1em;
+    
+    padding: 0.5em 1em;
     font: inherit;
     outline: 0;
-    margin:0em 1em;
+    margin:0em 0em;
     border-radius: 0;
     
 }
 
 .info-name{
       font-family: var(--font-serif);
-    font-size: 0.8em;
+    font-size: 1.2em;
     color: var(--color-main-medium);
     margin-bottom: 0.2em;
 }
 
-.info-value{
+.info-value1{
   font-size: 1.2em;
+    font-weight: var(--font-weight-bold);
+}
+.info-value{
+  font-size: 1em;
     font-weight: var(--font-weight-normal);
 }
 
@@ -705,12 +720,21 @@ a {
 
 
 .animal-profile {
-  padding:1em;
+  padding:0em;
 }
-.animal-profile-image img {
+/*.animal-profile-image img {
+
   width:30vw;
   height:30vw;
   object-fit:cover;
+}*/
+
+.animal-profile-image{
+     position:relative;
+   width:100%;
+   height:100%;
+   padding-top:1em;
+   border-radius: 50%;
 }
 
 
