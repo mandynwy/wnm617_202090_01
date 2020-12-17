@@ -64,7 +64,7 @@ const makeAnimalProfile = pet_times => templater(o=>`
    <div class="info-value">${o.personality}</div></div>
 
    <div class="profile-info2">
-   <div class="info-name">Activity </div>
+   <div class="info-name">Description </div>
    <div class="info-value">${o.description}</div></div>
 
    <div class="profile-info2">
