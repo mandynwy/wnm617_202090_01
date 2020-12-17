@@ -13,8 +13,7 @@ const ListPage = async() => {
 
 const RecentPage = async() => {
    let d = await query({type:'recent_locations',params:[sessionStorage.userId]});
-
-   console.log(d)
+   //console.log(d);
 
    let valid_animals = d.result.reduce((r,o)=>{
       o.icon = o.img;
@@ -28,13 +27,11 @@ const RecentPage = async() => {
 
    map_el.data("markers").forEach((o,i)=>{
       o.addListener("click",function(){
-
          /*
          // SIMPLE EXAMPLE
          sessionStorage.animalId = valid_animals[i].animal_id;
          $.mobile.navigate("#animal-profile-page")
          */
-
          
          //INFOWINDOW EXAMPLE
          map_el.data("infoWindow")
@@ -42,7 +39,6 @@ const RecentPage = async() => {
          map_el.data("infoWindow")
             .setContent(makeAnimalPopup(valid_animals[i]));
          
-
          /*
          // ACTIVE EXAMPLE
          $("#recent-drawer").addClass("active");
@@ -52,10 +48,6 @@ const RecentPage = async() => {
       })
    });
 }
-
-
-
-
 
 
 const UserProfilePage = async() => {
@@ -111,9 +103,8 @@ const AnimalEditPage = async() => {
    console.log(d);
 
    $("#animal-edit-form")
-      .html(makeAnimalEditForm(d.result[0]))
+      .html(makeAnimalEditForm(d.result[0]));
 }
-
 
 
 const LocationAddPage = async() => {
@@ -126,16 +117,16 @@ const LocationAddPage = async() => {
    //console.log(animals.result);
 
    // clear initial data
-   $("#location-add-form")[0].reset();
+   $("#location-add-page #location-add-form")[0].reset();
    $("#location-add-page #recent-drawer").removeClass("active");
 
    map.addListener("click",function(e){
-      console.log(e);
+      //console.log(e);
       let posFromClick = {lat:e.latLng.lat(),lng:e.latLng.lng()};
       let posFromCenter = {lat:map.getCenter().lat(),lng:map.getCenter().lng()};
       console.log(posFromClick,posFromCenter);
-      $("#location-add-lat").val(posFromClick.lat);
-      $("#location-add-lng").val(posFromClick.lng);
+      $("#location-add-page #location-add-lat").val(posFromClick.lat);
+      $("#location-add-page #location-add-lng").val(posFromClick.lng);
 
       makeMarkers(map_el,[posFromClick],false);
 
@@ -144,7 +135,7 @@ const LocationAddPage = async() => {
       if(!dclass.includes("active")) {
          drawer.addClass("active");
          // make take list of animals
-         $("#location-met-animal").html(makeAnimalIdOptions(animals.result, sessionStorage.animalId));
+         $("#location-add-page #location-met-animal").html(makeAnimalIdOptions(animals.result, sessionStorage.animalId));
       }
    });
 }

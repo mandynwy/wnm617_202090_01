@@ -106,15 +106,6 @@
    </section>
 
 
-
-
-
-
-
-
-
-
-
 <!--recent-page-->
    <!--<section data-role="page" id="recent-page">
       <div data-role="main">
@@ -165,23 +156,16 @@
 
 
    </section>-->
+
+<!--recent-page-->
+
     <section data-role="page" id="recent-page">
       <div data-role="main">
          <div class="map"></div>
-
-
-
-         <div class="modal" id="recent-drawer">
-            <div class="modal-back" data-deactivate="#recent-drawer"></div>
-            <div class="modal-drawer bottom">
-               <div class="modal-close-floater top right" data-deactivate="#recent-drawer">
-                  <div class="btn-circle">&times;</div>
-               </div>
-               <div class="modal-head">Title</div>
-               <div class="modal-body">
-                  Links and such
-               </div>
-            </div>
+         <div class="floater right bottom">
+           <a href="#location-add-page" class="btn-circle">
+             <img src="img/addlocation.svg" class="btn-bottom-right" alt="">
+           </a>
          </div>
       </div>
       <footer data-role="footer">
@@ -228,6 +212,7 @@
 
 
 <!--list-add-animal-->
+
       <div class="modal" id="list-add-animal">
          <div class="modal-back" data-deactivate="#list-add-animal"></div>
          <form class="modal-popup" id="list-add-animal-form" data-ajax="false">
@@ -258,10 +243,8 @@
    </section>
 
 
-
-
-
 <!--user-profile_page-->
+
     <section data-role="page" id="user-profile-page">
       <header data-role="header">
          <h1>User Profile</h1>
@@ -697,7 +680,7 @@
                <div class="modal-body">
                   <div class="form-control1" id="location-met-animal">
                   </div>
-                 <!-- <div class="display-flex">
+                  <!-- <div class="display-flex">
                      <div class="flex-none">
                         <input type="hidden" id="location-add-photo">
                         <label class="image-uploader thumbnail">

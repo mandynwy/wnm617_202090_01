@@ -74,9 +74,9 @@ const makeAnimalPopup = o => `
    </div>
    <div class="flex-none animal-popup-description">
       <h2>${o.name}</h2>
-      <h2>${o.favourite_can_flavor}</h2>
+      <h2>Likes ${o.favourite_can_flavor}</h2>
    </div>
-   <div class="form-button js-animal-jump" data-id="${o.animal_id}" style="width:100%">Visit</div>
+   <div class="form-button js-animal-jump" data-id="${o.animal_id}" style="width:100%">View Profile</div>
 </div>
 `;
 
@@ -99,7 +99,9 @@ const FormSelect = ({namespace,name,displayname,type,placeholder,value,options})
 
 const makeAnimalIdOptions = (a,aid) => {
    return `<label class="form-label">Who did you meet?</label>
-   <select class="form-select form-select-none" name="location-add-animal-id" id="location-add-animal-id">`+
+   <select class="form-select`+
+   (aid=="" ? ``:` form-select-none`)+
+   `" name="location-add-animal-id" id="location-add-animal-id">`+
    a.reduce((str,opt) => `${str}<option value="${opt.id}"`+(opt.id==aid?` selected`:``)+`>${opt.name}</option>`, '')+
    `</select>`;
 }
