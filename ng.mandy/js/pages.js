@@ -21,6 +21,9 @@ const RecentPage = async() => {
       return r;
    },[]);
 
+   // clear animal id
+   sessionStorage.animalId = "";
+
    let map_el = await makeMap("#recent-page .map");
 
    makeMarkers(map_el,valid_animals);
@@ -86,9 +89,8 @@ const AnimalProfilePage = async() => {
    console.log(d);
 
    let dl = await query({type:'locations_by_animal_id',params:[sessionStorage.animalId]});
-   console.log(dl);
+   //console.log(dl);
    
-   console.log(dl.result.length);
    $("#animal-profile-page .profile")
          .html(makeAnimalProfile(dl.result.length)(d.result));
 
