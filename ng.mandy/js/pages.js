@@ -41,7 +41,7 @@ const RecentPage = async() => {
             .open(map_el.data("map"),o);
          map_el.data("infoWindow")
             .setContent(makeAnimalPopup(valid_animals[i]));
-         
+            
          /*
          // ACTIVE EXAMPLE
          $("#recent-drawer").addClass("active");

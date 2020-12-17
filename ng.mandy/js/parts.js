@@ -75,14 +75,16 @@ const makeAnimalProfile = pet_times => templater(o=>`
 
 const makeAnimalPopup = o => `
 <div class="display-flex animal-popup" style="flex-wrap:wrap">
-   <div class="flex-none">
-      <div class="animal-image">
-         <img src="${o.img}"  alt="">
+   <div class="display-flex animal-image">
+      <div class="flex-none">
+         <img src="${o.img}" alt="">
+      </div>
+      <div class="display-flex" style="padding-left:1em;padding-top:0.5em;">
+         <h2>${o.name}</h2>
       </div>
    </div>
    <div class="flex-none animal-popup-description">
-      <h2>${o.name}</h2>
-      <h2>Likes ${o.favourite_can_flavor}</h2>
+      <textarea id="animal-popup-text-description" class="form-input" data-role="none" style="overflow:auto;height:6em;" disabled>${o.description}</textarea>
    </div>
    <div class="form-button js-animal-jump" data-id="${o.animal_id}" style="width:100%">View Profile</div>
 </div>
@@ -250,8 +252,8 @@ const filterList = (animals,type) => {
 
 const makeFilterList = (animals) => {
    return `
-   <div class="filter" data-field="favourite_can_flavor" data-value="">All</div>
-   ${filterList(animals,'favourite_can_flavor')}
+   <div class="filter" data-field="personality" data-value="">All</div>
+   ${filterList(animals,'personality')}
    `
 }
 
