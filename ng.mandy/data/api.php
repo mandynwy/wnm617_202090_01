@@ -163,9 +163,9 @@ function makeStatement($data) {
       case "insert_location":
          $r = makeQuery($c,"INSERT INTO
             `track_locations`
-            (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
+            (`animal_id`,`user_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
             VALUES
-            (?, ?, ?, ?, ?, '', NOW())
+            (?, ?, ?, ?, ?, ?, '', NOW())
             ",$p);
          return [
             "r"=>$r,
