@@ -41,7 +41,7 @@ const RecentPage = async() => {
             .open(map_el.data("map"),o);
          map_el.data("infoWindow")
             .setContent(makeAnimalPopup(valid_animals[i]));
-            
+
          /*
          // ACTIVE EXAMPLE
          $("#recent-drawer").addClass("active");
@@ -60,16 +60,16 @@ const UserProfilePage = async() => {
       throw d.error;
    }
 
-   let submitted = await query({type:'animals_by_user_id',params:[sessionStorage.userId]});
-   if (submitted.error) {
-      console.log(submitted);
-      throw submitted.error;
-   }
-
-   let met = await query({type:'locations_unique_animals_by_user_id',params:[sessionStorage.userId]});
+   let met= await query({type:'animals_by_user_id',params:[sessionStorage.userId]});
    if (met.error) {
       console.log(met);
       throw met.error;
+   }
+
+   let seen = await query({type:'locations_by_user_id',params:[sessionStorage.userId]});
+   if (seen.error) {
+      console.log(seen);
+      throw seen.error;
    }
 
    let top = await query({type:'locations_top_animal_by_user_id',params:[sessionStorage.userId]});
@@ -90,7 +90,7 @@ const UserProfilePage = async() => {
    }
 
    $("#user-profile-page .profile")
-      .html(makeUserProfile(submitted.result.length, met.result.length, freq_name, freq_img)(d.result));
+      .html(makeUserProfile(met.result.length, seen.result.length, freq_name, freq_img)(d.result));
 }
 
 const UserEditPage = async() => {

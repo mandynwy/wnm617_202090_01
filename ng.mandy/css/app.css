@@ -380,6 +380,20 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
+    
+}
+
+.animallist-name{
+  font-family: var(--font-serif);
+  font-weight:bold;
+  font-size: 1.1em;
+  color: var(--color-main-medium);
+  
+}
+.animallist-personality{
+  font-family: var(--font-sans);
+  font-size: 0.9em;
+
 }
 
 .animallist-item {
@@ -668,7 +682,7 @@ a {
 
 .info-name{
       font-family: var(--font-serif);
-    font-size: 1.2em;
+    font-size: 0.8em;
     color: var(--color-main-medium);
     margin-bottom: 0.2em;
 }
@@ -678,9 +692,17 @@ a {
     font-weight: var(--font-weight-bold);
 }
 .info-value{
-  font-size: 1em;
+  font-size: 1.1em;
     font-weight: var(--font-weight-normal);
 }
+.info-value-pet-time{
+  font-size: 0.9em;
+  
+    
+}
+
+
+
 
 
 .settings-list{

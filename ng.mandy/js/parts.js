@@ -5,15 +5,15 @@ const makeAnimalList = templater(o=>`
          <img src="${o.img}" alt="">
       </div>
       <div class="animallist-description">
-         <div class="animallist-name"><strong>Name</strong><br>${o.name}</div>
+         <div class="animallist-name">${o.name}</div>
          <!--<div class="animallist-color"><strong>Color</strong> ${o.color}</div>
          <div class="animallist-favourite_can_flavor"><strong>Favourite Can Flavor</strong> ${o.favourite_can_flavor}</div>-->
-         <div class="animallist-personality"><strong>Personality</strong><br>${o.personality}</div>
+         <div class="animallist-personality">${o.personality}</div>
       </div>
    </div>
    `);
 
-const makeUserProfile = (submitted_cats, met_cats, freq_name, freq_img) => templater(o=>`
+const makeUserProfile = (met_cats, seen_cats, freq_name, freq_img) => templater(o=>`
    <div class="user-profile-image ">
       <a href="#user-upload-page">
          <img src="${o.img}" alt="">
@@ -23,16 +23,16 @@ const makeUserProfile = (submitted_cats, met_cats, freq_name, freq_img) => templ
    </div>
    <div class="profile-info3">
       <div class="profile-info2">
-         <div class="info-name">SUBMITTED</div>
-         <div class="info-value">${submitted_cats} Cat Profiles</div>
-      </div>
-      <div class="profile-info2">
          <div class="info-name">MET</div>
          <div class="info-value">${met_cats} Cats</div>
+      </div>
+      <div class="profile-info2">
+         <div class="info-name">PET</div>
+         <div class="info-value">${seen_cats} Times</div>
       </div>`+
    ((freq_name=="" || freq_img=="") ? ``:`
       <div class="profile-info2">
-         <div class="info-name">MOST FREQUENTLY MET</div>
+         <div class="info-name">MOST FREQUENTLY PET</div>
          <div class="info-value">${freq_name}</div>
          <div class="animal-profile-image">
             <img src="${freq_img}" class="icon profile-icon" alt="">
@@ -48,7 +48,7 @@ const makeAnimalProfile = pet_times => templater(o=>`
    </div>
    <div class="profile-info">
    <div class="info-name1"><strong>${o.name}</strong></div>
-   <div class="info-value">Petted<strong> ${pet_times}</strong> Times!</div></div>
+   <div class="info-value-pet-time">Petted<strong> ${pet_times}</strong> Times!</div></div>
 
 
    <div class="profile-info2">
