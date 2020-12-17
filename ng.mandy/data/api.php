@@ -147,7 +147,7 @@ function makeStatement($data) {
             `track_users`
             (`name`,`username`,`email`,`password`,`img`,`date_create`)
             VALUES
-            ('',?, ?, md5(?), 'https://via.placeholder.com/400?text=USER', NOW())
+            (?,?, ?, md5(?), 'https://via.placeholder.com/400?text=USER', NOW())
             ",$p);
          return ["id"=>$c->lastInsertId()];
 

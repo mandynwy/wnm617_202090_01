@@ -122,6 +122,7 @@ const AnimalProfilePage = async() => {
 
    let dl = await query({type:'locations_by_animal_id',params:[sessionStorage.animalId]});
    //console.log(dl);
+   console.log(sessionStorage.animalId);
    
    $("#animal-profile-page .profile")
          .html(makeAnimalProfile(dl.result.length)(d.result));
@@ -163,9 +164,10 @@ const LocationAddPage = async() => {
 
    map.addListener("click",function(e){
       //console.log(e);
+      console.log(sessionStorage.animalId);
       let posFromClick = {lat:e.latLng.lat(),lng:e.latLng.lng()};
       let posFromCenter = {lat:map.getCenter().lat(),lng:map.getCenter().lng()};
-      console.log(posFromClick,posFromCenter);
+      //console.log(posFromClick,posFromCenter);
       $("#location-add-page #location-add-lat").val(posFromClick.lat);
       $("#location-add-page #location-add-lng").val(posFromClick.lng);
 

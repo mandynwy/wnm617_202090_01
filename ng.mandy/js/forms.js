@@ -1,5 +1,6 @@
 
 const checkSignupForm = () => {
+   let name = $("#signup-name").val();
    let username = $("#signup-username").val();
    let email = $("#signup-email").val();
    let password = $("#signup-password").val();
@@ -9,7 +10,7 @@ const checkSignupForm = () => {
       throw "Passwords don't match";
       return;
    } else {
-      query({type:'insert_user',params:[username,email,password]})
+      query({type:'insert_user',params:[name,username,email,password]})
       .then(d=>{
          if(d.error) {
             throw d.error;
@@ -109,10 +110,12 @@ const checkLocationAddForm = () => {
 }
 
 const checkAnimalDelete = id => {
+   console.log("id:", id);
    query({
       type:'delete_animal',
       params:[id]
    }).then(d=>{
+      //console.log(d);
       if(d.error) {
          throw d.error;
       }
