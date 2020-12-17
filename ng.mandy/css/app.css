@@ -582,6 +582,16 @@ a {
   margin-top:0.5em;
 }
 
+.btn-bottom-right {
+  width:12vw;
+  height:12vw;
+}
+
+.btn-top-right {
+  width:5vw;
+  height:5vw;
+}
+
 .modal-close-floater {
     position: absolute;
 }
