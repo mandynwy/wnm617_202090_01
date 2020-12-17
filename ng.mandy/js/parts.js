@@ -5,10 +5,10 @@ const makeAnimalList = templater(o=>`
          <img src="${o.img}" alt="">
       </div>
       <div class="animallist-description">
-         <div class="animallist-name">${o.name}</div>
-         <div class="animallist-color"><strong>Color</strong> ${o.color}</div>
-         <div class="animallist-favourite_can_flavor"><strong>Favourite Can Flavor</strong> ${o.favourite_can_flavor}</div>
-         <div class="animallist-personality"><strong>Personality</strong> ${o.personality}</div>
+         <div class="animallist-name"><strong>Name</strong><br>${o.name}</div>
+         <!--<div class="animallist-color"><strong>Color</strong> ${o.color}</div>
+         <div class="animallist-favourite_can_flavor"><strong>Favourite Can Flavor</strong> ${o.favourite_can_flavor}</div>-->
+         <div class="animallist-personality"><strong>Personality</strong><br>${o.personality}</div>
       </div>
    </div>
    `);
@@ -183,7 +183,6 @@ const drawAnimalList = (a,empty_phrase="No cats yet, you should add some.") => {
       a.length ? makeAnimalList(a) : empty_phrase
    )
 }
-
 
 
 const capitalize = s => s[0].toUpperCase()+s.substr(1);

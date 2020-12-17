@@ -153,13 +153,12 @@ a {
 
 
 .form-label{
-  display:block;
-  width:100%;
-  font-family: var(--font-serif);
+    display:block;
+    width:100%;
+    font-family: var(--font-serif);
     font-size: 0.8em;
     color: var(--color-main-medium);
     margin-bottom: 0.2em;
-
 }
 
 .form-select{
@@ -396,6 +395,7 @@ a {
 .animallist-description {
     padding: 0.5em;
     flex: 1 1 auto;
+    background-color: var(--color-neutral-lighter);
 }
 
 .animallist-color{
@@ -737,17 +737,16 @@ a {
     display: flex;
     flex-direction: column;
 }
+
 .profile-top {
-   flex: 1;
+    flex: 1;
     position: relative;
     overflow:auto;
     background-color: var(--color-neutral-lighter);
 }
+
 .profile-bottom {
-    
-
-
-      height: 30vh;
+    height: 30vh;
     flex: none;
     overflow:auto;
     position:relative;
