@@ -99,7 +99,7 @@ const FormSelect = ({namespace,name,displayname,type,placeholder,value,options})
 
 const makeAnimalIdOptions = (a,aid) => {
    return `<label class="form-label">Who did you meet?</label>
-   <select class="form-select" name="location-add-animal-id" id="location-add-animal-id">`+
+   <select class="form-select form-select-none" name="location-add-animal-id" id="location-add-animal-id">`+
    a.reduce((str,opt) => `${str}<option value="${opt.id}"`+(opt.id==aid?` selected`:``)+`>${opt.name}</option>`, '')+
    `</select>`;
 }

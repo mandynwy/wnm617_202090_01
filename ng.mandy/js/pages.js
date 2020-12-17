@@ -120,12 +120,14 @@ const LocationAddPage = async() => {
    let map_el = await makeMap("#location-add-page .map");
    makeMarkers(map_el,[]);
 
-   console.log(sessionStorage);
-
    let map = map_el.data('map');
 
    let animals = await query({type:'animals_by_user_id',params:[sessionStorage.userId]});
-   console.log(animals.result);
+   //console.log(animals.result);
+
+   // clear initial data
+   $("#location-add-form")[0].reset();
+   $("#location-add-page #recent-drawer").removeClass("active");
 
    map.addListener("click",function(e){
       console.log(e);

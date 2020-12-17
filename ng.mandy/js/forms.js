@@ -37,8 +37,6 @@ const checkUserEditForm = () => {
 }
 
 
-
-
 const checkAnimalAddForm = () => {
    let name = $("#animal-add-name").val();
    let color = $("#animal-add-color").val();
@@ -93,22 +91,18 @@ const checkLocationAddForm = () => {
    let lat = $("#location-add-lat").val();
    let lng = $("#location-add-lng").val();
    let description = $("#location-add-description").val();
-   let photo = $("#location-add-photo").val();
+   //let photo = $("#location-add-photo").val();
 
-   console.log([animalId,+lat,+lng,description,photo]);
+   console.log([animalId,+lat,+lng,description]);
 
    query({
       type:'insert_location',
-      params:[animalId,+lat,+lng,description,photo]
+      params:[animalId,+lat,+lng,description,""]
    }).then(d=>{
       if(d.error) {
          console.log(d);
          throw d.error;
       }
-
-      $("#location-add-form")[0].reset();
-
-      console.log(d);
 
       window.history.go(-2);
    })

@@ -7,8 +7,8 @@
    <meta name="apple-mobile-web-app-capable" content="yes">
    <meta name="mobile-web-app-capable" content="yes">
 
-   <link rel="apple-touch-icon" href="./site_logo.png">
-   <link rel="icon" href="./site_logo.png">
+   <link rel="apple-touch-icon" href="img/site_logo.png">
+   <link rel="icon" href="img/site_logo.png">
 
 
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +38,7 @@
    <section data-role="page" id="signin-page">
       <div data-role="main">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center" >
-            <img src="img/Purr_logo.png" style="width:70vw;height:70vw;" class="icon" alt="">
+            <img src="img/site_logo.png" style="width:70vw;height:70vw;" class="icon" alt="">
          </div>
          <form id="signin-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
@@ -69,7 +69,7 @@
    <section data-role="page" id="signup-page">
       <div data-role="main">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center" >
-            <img src="img/Join_us_logo.png" style="width:60vw;height:60vw;" class="icon" alt="">
+            <img src="img/join_us_logo.png" style="width:60vw;height:60vw;" class="icon" alt="">
          </div>
          <form id="signup-form" data-ajax="false" style="padding:1em">
             <div class="form-control">
@@ -186,18 +186,12 @@
       </div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page"> <img src="img/icon_location.png" style="width:20vw;height:20vw; margin-top:0.5em" alt=""></a></li>
-            <li><a href="#list-page"><img src="img/icon_cathome.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
-            <li><a href="#user-profile-page"><img src="img/icon_profile2.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
+            <li><a href="#recent-page"><img src="img/location.svg" class="btn-nav" alt=""></a></li>
+            <li><a href="#list-page"><img src="img/catpage.svg" class="btn-nav" alt=""></a></li>
+            <li><a href="#user-profile-page"><img src="img/profile.svg" class="btn-nav" alt=""></a></li>
          </ul>
       </footer>
-
-
    </section>
-
-
-
-
 
 
 <!--list-page-->
@@ -217,20 +211,19 @@
             <div class="animallist"></div>
          </div>
          <div class="floater right bottom">
-            <a class="btn-circle" href="#animal-add-page">&plus;</a></div>
+            <a class="btn-circle" href="#animal-add-page">
+               <img src="img/addcat.svg" style="width:12vw;height:12vw; " alt="">
+            </a>
+         </div>
       </div>
         <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page"> <img src="img/icon_location.png" style="width:20vw;height:20vw; margin-top:0.5em" alt=""></a></li>
-            <li><a href="#list-page"><img src="img/icon_cathome.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
-            <li><a href="#user-profile-page"><img src="img/icon_profile2.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
+            <li><a href="#recent-page"> <img src="img/location.svg" class="btn-nav" alt=""></a></li>
+            <li><a href="#list-page"><img src="img/catpage.svg" class="btn-nav" alt=""></a></li>
+            <li><a href="#user-profile-page"><img src="img/profile.svg" class="btn-nav" alt=""></a></li>
          </ul>
       </footer>
    </section>
-
-
-
-
 
 
 
@@ -283,9 +276,9 @@
       </div>
         <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page"> <img src="img/icon_location.png" style="width:20vw;height:20vw; margin-top:0.5em" alt=""></a></li>
-            <li><a href="#list-page"><img src="img/icon_cathome.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
-            <li><a href="#user-profile-page"><img src="img/icon_profile2.png" style="width:20vw;height:20vw; margin-top:0.5em"alt=""></a></li>
+            <li><a href="#recent-page"> <img src="img/location.svg" class="btn-nav" alt=""></a></li>
+            <li><a href="#list-page"><img src="img/catpage.svg" class="btn-nav" alt=""></a></li>
+            <li><a href="#user-profile-page"><img src="img/profile.svg" class="btn-nav" alt=""></a></li>
          </ul>
       </footer>
    </section>
@@ -551,7 +544,7 @@
          <div class="profile-bottom">
             <div class="map"></div>
             <div class="floater right bottom">
-               <a href="#location-add-page" class="btn-circle"><img src="img/icon_addlocation.png"  style="width:12vw;height:12vw; "alt=""></a>
+               <a href="#location-add-page" class="btn-circle"><img src="img/addlocation.svg"  style="width:12vw;height:12vw; "alt=""></a>
             </div>
          </div>
          <div class="profile-top">
@@ -644,12 +637,12 @@
          </ul>
       </header>
       <div data-role="main">
-         <input type="hidden" id="location-add-lat">
-         <input type="hidden" id="location-add-lng">
-         <div class="map"></div>
-         <div class="modal" id="recent-drawer">
-           <!--<div class="modal-back" data-deactivate="#recent-drawer"></div>-->
-            <div class="modal-drawer bottom">
+         <form id="location-add-form" data-ajax="false">
+           <input type="hidden" id="location-add-lat">
+           <input type="hidden" id="location-add-lng">
+           <div class="map"></div>
+           <div class="modal" id="recent-drawer">
+             <div class="modal-drawer bottom">
                <div class="modal-head2">Meet</div>
                <div class="modal-body">
                   <div class="form-control1" id="location-met-animal">
@@ -672,7 +665,7 @@
                </div>
              </div>
            </div>
-         </div>
+         </form>
       </div>
    </section>
 

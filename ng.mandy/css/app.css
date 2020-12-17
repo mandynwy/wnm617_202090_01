@@ -163,14 +163,13 @@ a {
 }
 
 .form-select{
-     width: 100%;
+    width: 100%;
     padding: 1em;
     font-family: var(--font-sans);
     color: var(--color-main-main);
     background-color: var(--color-neutral-lighter);
     position: relative;
     border-width: 0;
-}
 }
 
 .form-select select{
@@ -186,11 +185,20 @@ a {
     outline: 0;
     text-align: center;
     background-color: var(--color-neutral-lighter);
+    background-position: right 5px top;
     text-decoration: none;
     cursor: pointer;
 }
+
+.form-select-none {
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   appearance: none;
+   pointer-events: none;
+}
+
 .form-button-save{
-   width: 100%;
+    width: 100%;
     display: inline-block;
     border-width: 0;
     background-color: var(--color-main-dark);
@@ -200,7 +208,10 @@ a {
     border: 2px solid var(--color-main-dark);
     font: inherit;
     outline: 0;
-    text-align: center
+    text-align: center;
+}
+.form-button-save:hover{
+    text-decoration: none;
 }
 
 
@@ -466,14 +477,12 @@ a {
 }
 .modal-body {
     background-color: var(--color-white);
-    padding: 1em;
+    padding:1em;
 }
 .modal-head h1 {
   font-size:1em;
   margin:0;
 }
-
-
 
 
 
@@ -485,8 +494,6 @@ a {
    transition: all 0.3s;
    box-shadow:0 0 5px rgba(0,0,0,0.15);
    border-width: 10em;
-   
-
 }
 .modal-drawer.left,
 .modal-drawer.right {
@@ -513,7 +520,7 @@ a {
 
 .modal-drawer .modal-body {
    flex:1 1 100%;
-   padding:20px;
+   padding: 0px 20px 20px 20px;
   
 }
 
@@ -559,8 +566,7 @@ a {
 
 /* CIRCLE */
 .btn-circle {
-  display:inline-block;
-   background-color:var(--color-white);
+   display:inline-block;
    width:3rem;
    height:3rem;
    line-height:3rem;
@@ -570,8 +576,11 @@ a {
    box-shadow:2px 2px 5px rgba(0,0,0,0.15);
 }
 
-
-
+.btn-nav {
+  width:12vw;
+  height:12vw;
+  margin-top:0.5em;
+}
 
 .modal-close-floater {
     position: absolute;
@@ -746,13 +755,18 @@ a {
 }*/
 
 .animal-profile-image{
-     position:relative;
-   width:100%;
-   height:100%;
-   padding-top:1em;
-   border-radius: 50%;
+  position:relative;
+  width:100%;
+  height:100%;
+  padding-top:1em;
+  border-radius: 50%;
 }
 
+.js-animal-delete {
+  color:red;
+  margin-top:1em;
+  float:right;
+}
 
 .image-uploader.thumbnail {
    width:5em;
