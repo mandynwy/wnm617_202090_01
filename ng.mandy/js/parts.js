@@ -13,7 +13,7 @@ const makeAnimalList = templater(o=>`
    </div>
    `);
 
-const makeUserProfile = submitted_cats => templater(o=>`
+const makeUserProfile = (submitted_cats, met_cats, freq_name, freq_img) => templater(o=>`
    <div class="user-profile-image ">
       <a href="#user-upload-page">
          <img src="${o.img}" alt="">
@@ -26,18 +26,19 @@ const makeUserProfile = submitted_cats => templater(o=>`
          <div class="info-name">SUBMITTED</div>
          <div class="info-value">${submitted_cats} Cat Profiles</div>
       </div>
-      <!--<div class="profile-info2">
+      <div class="profile-info2">
          <div class="info-name">MET</div>
-         <div class="info-value"> Cats</div>
-      </div>
+         <div class="info-value">${met_cats} Cats</div>
+      </div>`+
+   ((freq_name=="" || freq_img=="") ? ``:`
       <div class="profile-info2">
          <div class="info-name">MOST FREQUENTLY MET</div>
-         <div class="info-value"></div>
+         <div class="info-value">${freq_name}</div>
          <div class="animal-profile-image">
-            <img src="" class="icon profile-icon" alt="">
+            <img src="${freq_img}" class="icon profile-icon" alt="">
          </div>
-      </div>-->
-   </div>
+      </div>`)+
+   `</div>
    `);
 
 const makeAnimalProfile = pet_times => templater(o=>`
@@ -187,7 +188,7 @@ ${FormSelect({
 `;
 
 
-const drawAnimalList = (a,empty_phrase="No cats yet, you should add some.") => {
+const drawAnimalList = (a,empty_phrase="<br>No cats yet, you should add some.") => {
    $("#list-page .animallist").html(
       a.length ? makeAnimalList(a) : empty_phrase
    )

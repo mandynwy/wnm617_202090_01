@@ -116,12 +116,11 @@ a {
 
 }
 
-
-.ui-mobile label.form-label {
- 
+.ui-mobile label.form-label { 
     font-size: 0.8em;
     color: var(--color-black);
 }
+
 .form-input {
     width: 100%;
     display: inline-block;
@@ -132,6 +131,7 @@ a {
     font: inherit;
     outline: 0;
 }
+
 .form-button {
     width: 100%;
     display: inline-block;
@@ -143,13 +143,13 @@ a {
     font: inherit;
     outline: 0;
     text-align:center;
+    margin-top: 1em;
 }
+
 .form-button:hover {
    text-decoration:none;
    cursor:pointer;
 }
-
-
 
 
 .form-label{
@@ -164,7 +164,7 @@ a {
 .form-select{
     width: 100%;
     padding: 1em;
-    font-family: var(--font-sans);
+    font: inherit;
     color: var(--color-main-main);
     background-color: var(--color-neutral-lighter);
     position: relative;
@@ -180,11 +180,11 @@ a {
     border-width: 0.5;
     color: inherit;
     font: inherit;
-    padding: 0.5em 1em;
+    padding: 0em 1em;
     outline: 0;
     text-align: center;
     background-color: var(--color-neutral-lighter);
-    background-position: right 5px top;
+    background-position: right 0px top;
     text-decoration: none;
     cursor: pointer;
 }

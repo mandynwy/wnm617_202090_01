@@ -55,12 +55,42 @@ const RecentPage = async() => {
 
 const UserProfilePage = async() => {
    let d = await query({type:'user_by_id',params:[sessionStorage.userId]});
-   console.log(d);
+   if (d.error) {
+      console.log(d);
+      throw d.error;
+   }
 
    let submitted = await query({type:'animals_by_user_id',params:[sessionStorage.userId]});
+   if (submitted.error) {
+      console.log(submitted);
+      throw submitted.error;
+   }
+
+   let met = await query({type:'locations_unique_animals_by_user_id',params:[sessionStorage.userId]});
+   if (met.error) {
+      console.log(met);
+      throw met.error;
+   }
+
+   let top = await query({type:'locations_top_animal_by_user_id',params:[sessionStorage.userId]});
+   if (top.error) {
+      console.log(top);
+      throw top.error;
+   }
+   let freq_name = "";
+   let freq_img = "";
+   if (top.result.length > 0) {
+      let a = await query({type:'animal_by_id',params:[top.result[0].animal_id]});
+      if (a.error || a.result.length == 0) {
+         console.log(a);
+         throw a.error;
+      }
+      freq_name = a.result[0].name;
+      freq_img = a.result[0].img;
+   }
 
    $("#user-profile-page .profile")
-      .html(makeUserProfile(submitted.result.length)(d.result));
+      .html(makeUserProfile(submitted.result.length, met.result.length, freq_name, freq_img)(d.result));
 }
 
 const UserEditPage = async() => {
@@ -71,6 +101,7 @@ const UserEditPage = async() => {
    $("#user-edit-form")
       .html(makeUserEditForm(d.result[0]))
 }
+
 const UserUploadPage = async() => {
    query({
       type:'user_by_id',
