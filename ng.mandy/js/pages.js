@@ -177,8 +177,8 @@ const LocationAddPage = async() => {
       let dclass = drawer.attr('class');
       if(!dclass.includes("active")) {
          drawer.addClass("active");
-         // make take list of animals
-         $("#location-add-page #location-met-animal").html(makeAnimalIdOptions(animals.result, sessionStorage.animalId));
       }
+
+      $("#location-add-page #location-met-animal").html(makeAnimalIdOptions(animals.result, sessionStorage.animalId));
    });
 }
